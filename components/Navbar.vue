@@ -1,5 +1,5 @@
 <template>
- 
+
   <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-5  " :class="{'bg-white shadow-md': isVisible, 'bg-transparent': !isVisible}">
     <div class="container mx-auto flex flex-wrap items-center justify-between">
       <div class="w-1/3">
@@ -41,10 +41,10 @@ export default {
   },
   methods: {
     handleScroll() {
-     
+
       if (window.scrollY > 50) {
         this.isVisible = false
-        
+
       } else {
         this.isVisible = true
       }

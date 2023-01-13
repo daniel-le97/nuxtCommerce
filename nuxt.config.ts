@@ -2,7 +2,9 @@
 export default defineNuxtConfig({
   modules: [
     '@sidebase/nuxt-auth',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    'nuxt-swiper',
+    '@vueuse/nuxt'
   ],
   typescript: {
     shim: false
