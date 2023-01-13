@@ -1,12 +1,7 @@
-
-
-
 <template>
-  <div >
-
-  <HeroImage/>
-  <CallToAction/>
-<FeaturedProducts/>
-<AboutUs/>
+  <div>
+    <HeroImage />
+    <CallToAction />
+    <FeaturedProducts />
   </div>
 </template>

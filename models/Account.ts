@@ -1,5 +1,5 @@
 export class Account {
-  picture: URL
+  picture: String
   id: String | Number
   email: String
   name: String
