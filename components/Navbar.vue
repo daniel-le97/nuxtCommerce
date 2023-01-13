@@ -1,6 +1,6 @@
 <template>
 
-  <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-5  " :class="{'bg-white shadow-md': isVisible, 'bg-transparent': !isVisible}">
+  <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-5  " :class="{'bg-white shadow-md': isVisible, 'bg-black text-white ': !isVisible}">
     <div class="container mx-auto flex flex-wrap items-center justify-between">
       <div class="w-1/3">
         <router-link to="/" class="text-lg font-medium text-black no-underline">
@@ -52,6 +52,10 @@ export default {
   }
 }
 </script>
-<style>
-/* Your component's CSS here */
+<style lang="scss">
+
+
+.bg-custom{
+  background-color:black
+}
 </style>

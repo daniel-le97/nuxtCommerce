@@ -15,13 +15,15 @@
 
 
 <script>
+
+
 export default {
   setup(){
 
 
   
     return {
- 
+//  products:computed(() => AppState.FeaturedProducts),
     }
   }
 }
