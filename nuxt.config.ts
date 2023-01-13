@@ -6,5 +6,15 @@ export default defineNuxtConfig({
   ],
   typescript: {
     shim: false
+  },
+  tailwindcss: {
+    config: {
+      content: [],
+      theme: {
+        container: {
+          center: true
+        }
+      }
+    }
   }
 })
