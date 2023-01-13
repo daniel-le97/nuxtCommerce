@@ -4,7 +4,7 @@
 
 <div class=" flex justify-center">
   <div class=" flex" id="card-container">
-  <ProductCard v-for="i in 3" class="card w-64 m-2"/>
+  <ProductCard v-for="i in 3" class=""/>
   </div>
 
 </div>
@@ -21,7 +21,7 @@ export default {
   setup(){
 
 
-  
+
     return {
 //  products:computed(() => AppState.FeaturedProducts),
     }
