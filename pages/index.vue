@@ -1,5 +1,5 @@
 
-import HeroImage from '~~/components/index/HeroImage.vue';
+
 
 <template>
   <div >
@@ -7,5 +7,6 @@ import HeroImage from '~~/components/index/HeroImage.vue';
   <HeroImage/>
   <CallToAction/>
 <FeaturedProducts/>
+<AboutUs/>
   </div>
 </template>
