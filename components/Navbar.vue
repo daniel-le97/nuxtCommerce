@@ -1,6 +1,6 @@
 <template>
  
-  <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-2  " :class="{'bg-white shadow-md': isVisible, 'bg-transparent': !isVisible}">
+  <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-5  " :class="{'bg-white shadow-md': isVisible, 'bg-transparent': !isVisible}">
     <div class="container mx-auto flex flex-wrap items-center justify-between">
       <div class="w-1/3">
         <router-link to="/" class="text-lg font-medium text-black no-underline">
@@ -16,7 +16,7 @@
       <div class="w-1/3">
         <div class="flex justify-end">
           <button class="text-gray-500 text-xl leading-none p-2 rounded-full hover:bg-gray-100 hover:text-gray-600">
-            <i class="fas fa-user"></i>
+                    Login
           </button>
         </div>
       </div>
