@@ -10,14 +10,17 @@
     </div>
     
    <div class="text-center mt-5 container ">
-     <h1 class="text-4xl">
+     <h1 class="text-4xl mb-2">
      Welcome to Nuxt Market! 
     </h1>
     <p>
   
 
 Sign up for an 👨‍🎤 account, ✍️ browse products, then checkout heart content created by other users.
-All public content is server-rendered and search-engine optimized.
+
+    </p>
+    <p>
+      All public content is server-rendered and search-engine optimized.
     </p>
    </div>
   </div>
