@@ -30,7 +30,7 @@ productsService.getProducts()
 
 
     return {
-    
+
 
     }
   }

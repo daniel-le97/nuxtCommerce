@@ -37,7 +37,10 @@ export default {
 
 <style lang="scss" scoped>
 
-
+.product-card:hover{
+      width: 300px;
+      transition: all 0.5s ease;
+}
 .product-card img{
 width: 300px;
   height: 300px;
@@ -57,6 +60,7 @@ border-radius: 8px;
  background-color: rgba(0, 0, 0, 0.623);
  backdrop-filter: blur(4px);
     opacity: 1;
+
 }
 .product-card:hover img{
   filter: brightness(80%);
