@@ -1,24 +1,30 @@
 <template>
-    <div>
-        <div v-for="(product, index) in cartItems" :key="index">
-            {{ product.name }} - {{ product.price }}
-            <button @click="removeProduct(index)">Remove</button>
-        </div>
-        Total: {{ cartTotal }}
-        <button @click="clearCart">Clear cart</button>
+  <div>
+    <h1>My Cart</h1>
+    <div v-for="(item, index) in cartItems" :key="index">
+      {{ item.name }} - {{ item.price }}
+      <button @click="removeFromCart(index)">Remove</button>
     </div>
+    <div>Total: {{ cartTotal }}</div>
+    <div>Items in cart: {{ cartCount }}</div>
+    <button @click="clearCart">Clear Cart</button>
+  </div>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { cartStore } from '@/store/cart'
 
 export default {
-    computed: {
-        ...mapState({
-            cartItems: state => state.cart.items,
-            cartTotal: state => state.cart.total
-        }),
-        ...mapActions('cart', ['removeProduct', 'clearCart'])
+  setup() {
+
+    return {
+      cartStore:useState(),
+      cartItems: cartStore.items,
+      cartTotal: cartStore.total,
+      cartCount: cartStore.counter,
+      removeFromCart: cartStore.removeProduct,
+      clearCart: cartStore.clearCart
     }
+  },
 }
 </script>

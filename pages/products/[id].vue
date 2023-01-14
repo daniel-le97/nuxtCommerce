@@ -32,7 +32,7 @@
 
 
 <div class="flex justify-center">
- <button class="bg-black shadow-lg text-white rounded-md px-4 py-2 hover:bg-blue-600 focus:outline-none">Add to Cart</button>
+<AddToCart :productId="product.id" />
 </div>
 
   </div>
