@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     '@vueuse/nuxt',
      '@pinia/nuxt',
+     '@nuxtjs/strapi',
   ],
   typescript: {
     shim: false
