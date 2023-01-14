@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       }
     }
   },
-css:[
-  '@/assets/scss/main.scss'
-]
+  css: [
+    '@/assets/scss/main.scss'
+  ]
 })
