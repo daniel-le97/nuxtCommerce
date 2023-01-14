@@ -1,9 +1,9 @@
 export class Product {
-id: Number
-name: String
-coverImage: String
-price: Number
-description:String
+  id: Number
+  name: String
+  coverImage: String
+  price: Number
+  description:String
 
   constructor (data: any) {
     this.id = data.id
@@ -11,6 +11,5 @@ description:String
     this.coverImage = data.attributes.CoverImage
     this.price = data.attributes.Price
     this.description = data.attributes.Description
-
   }
 }
