@@ -5,6 +5,6 @@ export const AppState = reactive({
   account: {} as Account,
   products: [] as Product[],
   activeProduct: {} as Product,
-hats:[] as Product[],
-glasses:[] as Product[],
+  hats: [] as Product[],
+  glasses: [] as Product[]
 })
