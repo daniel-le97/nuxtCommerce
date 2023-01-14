@@ -4,39 +4,32 @@
     <CallToAction />
     <FeaturedProducts />
     <AboutUs />
-
   </div>
 </template>
 
-
-
 <script>
-
-import {productsService} from '../service/ProductsService.ts'
+import { productsService } from '../service/ProductsService'
 export default {
-  setup(){
-    onMounted(()=>{
-fetchProducts()
+  setup () {
+    onMounted(() => {
+      fetchProducts()
     })
 
-async function fetchProducts() {
+    async function fetchProducts () {
       try {
-productsService.getProducts()
+        await productsService.getProducts()
       } catch (err) {
-        console.error(err);
+        logger.error(err)
       }
     }
 
-
-
     return {
-
+      products: []
 
     }
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 
