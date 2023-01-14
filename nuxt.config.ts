@@ -1,16 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-
 export default defineNuxtConfig({
   modules: [
     '@sidebase/nuxt-auth',
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
     '@vueuse/nuxt',
-     '@pinia/nuxt',
-      ['@nuxtjs/strapi', {
+    '@pinia/nuxt',
+    ['@nuxtjs/strapi', {
       url: 'http://localhost:1337',
-    
+
       entities: [
         'products'
       ]

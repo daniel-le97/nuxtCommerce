@@ -1,34 +1,36 @@
 <template>
+  <nuxt-link :to="`/products/${product.id}`">
+    <div class="relative shadow-xl product-card rounded-lg">
+      <img class=" object-cover  rounded-lg" src="https://images.unsplash.com/photo-1632670549453-7a3dfac254a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="image">
 
-<nuxt-link :to="`/products/${product.id}`">
-
-  <div class="relative shadow-xl product-card rounded-lg">
-    <img class=" object-cover  rounded-lg" src="https://images.unsplash.com/photo-1632670549453-7a3dfac254a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="image">
-
-    <div class="absolute top-0 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
+      <div class="absolute top-0 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
         <div class="p-4 text-white text-center">
-            <h4 class="text-lg font-medium">{{product.name}}</h4>
-            <p class="text-gray-600"> {{ product.price }}  </p>
+          <h4 class="text-lg font-medium">
+            {{ product.name }}
+          </h4>
+          <p class="text-gray-600">
+            {{ product.price }}
+          </p>
         </div>
+      </div>
     </div>
-</div>
-
-</nuxt-link>
-
+  </nuxt-link>
 </template>
 
-
 <script>
+import { AppState } from '../AppState'
+
 export default {
-  props:{
-    product:{type:Object,required:true}
+  props: {
+    product: { type: Object, required: true }
   },
-  setup(props){
-    return {}
+  setup () {
+    return {
+      dogs: computed(() => AppState.account)
+    }
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 
