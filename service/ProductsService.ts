@@ -9,7 +9,8 @@ class ProductsService{
 
     const { find } = useStrapi()
     const res = await find('products')
-    AppState.products = []
+
+  AppState.products = res.data.map(p=> p)
   }
 }
 export const productsService = new ProductsService()
