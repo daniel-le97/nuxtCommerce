@@ -1,4 +1,4 @@
-<!-- eslint-disable vue/multi-word-component-names -->
+<!-- eslint-disable vue/multi-word-component-names, eslint-disable no-console -->
 <template>
   <span class="navbar-text">
     <button
@@ -48,7 +48,9 @@ export default {
       user: computed(() => AppState.user),
       account: computed(() => AppState.account),
       async login () {
-        await AuthService.loginWithPopup()
+        const { login } = useStrapiAuth()
+        const isAuthenticated = await login({ identifier: '', password: '' })
+        console.log(isAuthenticated)
       },
       async logout () {
         await AuthService.logout({ returnTo: window.location.origin })
