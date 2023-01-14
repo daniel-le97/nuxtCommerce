@@ -5,14 +5,35 @@ class ProductsService {
 
   async getProducts () {
     const { find } = useStrapi()
+    const res = await find('products', {
 
-    const res = await find<Product>('products')
+        populate: 'category',
 
-    const products = res.data.map(r => new Product(r))
+      }
+    );
+res.data.map(d=>{
+  //@ts-ignore
+ if (d.attributes?.category?.data?.attributes?.Name == "Hats") {
+AppState.hats.push(new Product(d))
+ }
+ else
+ AppState.glasses.push(new Product(d))
+
+})
+console.log(AppState.hats);
+console.log(AppState.glasses);
+
+
+    // const res = await find<Product>('products',{
+    //   params:{
+    //     _where:{category:'glasses'}
+    //   }
+    // })
 
 
 
-    AppState.products = products
+
+    // AppState.products = products
 
 
   }

@@ -26,7 +26,8 @@
     "@pinia/nuxt": "^0.4.6",
     "axios": "^1.2.2",
     "nuxt-swiper": "^0.1.6",
-    "pinia": "^2.0.28"
+    "pinia": "^2.0.28",
+    "strapi-plugin-populate-deep": "^1.1.2"
   },
   "overrides": {
     "vue": "3.2.45"
