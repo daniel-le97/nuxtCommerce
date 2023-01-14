@@ -17,7 +17,7 @@
 <script>
 
 
-
+import { AppState } from "~~/AppState.ts";
 
 export default {
   setup(){
@@ -25,7 +25,7 @@ export default {
 
 
     return {
- products:computed(() => AppState),
+ products:computed(() => AppState.featuredProducts),
     }
   }
 }
