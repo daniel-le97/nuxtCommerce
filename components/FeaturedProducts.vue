@@ -3,7 +3,7 @@
 
 
 <div class=" flex justify-center">
-  <div class=" flex" id="card-container">
+  <div class=" flex gap-2" id="card-container">
   <ProductCard v-for="i in 3" class=""/>
   </div>
 
