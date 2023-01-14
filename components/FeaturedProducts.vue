@@ -1,36 +1,25 @@
 <template>
   <div class=" container mt-10">
-
-
-<div class=" flex justify-center">
-  <div class=" flex gap-2" id="card-container">
-  <ProductCard v-for="i in products" class="" :product="i" />
-  </div>
-
-</div>
-
-
+    <div class=" flex justify-center">
+      <div id="card-container" class=" flex gap-2">
+        <!-- <ProductCard v-for="i in products" class="" :product="i" /> -->
+      </div>
+    </div>
   </div>
 </template>
 
-
 <script>
 
-
-import { AppState } from "~~/AppState.ts";
+import { AppState } from '~~/AppState.ts'
 
 export default {
-  setup(){
-
-
-
+  setup () {
     return {
- products:computed(() => AppState.featuredProducts),
+      products: computed(() => AppState.featuredProducts)
     }
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 

@@ -1,19 +1,14 @@
 <template>
-  <div class="component">
-
-
-  </div>
+  <div class="component" />
 </template>
-
 
 <script>
 export default {
-  setup(){
+  setup () {
     return {}
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
 

@@ -3,7 +3,13 @@
     <HeroImage />
     <CallToAction />
     <FeaturedProducts />
-    <AboutUs/>
+    <AboutUs />
+    <button @click="getDogs">
+      get
+    </button>
+    <div v-if="dogs">
+      {{ dogs }}
+    </div>
   </div>
 </template>
 
