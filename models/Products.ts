@@ -1,14 +1,16 @@
 export class Product {
-  id: String
-  name: String
-  coverImage: String
-  price: Number
-  images: String | String[]
+id: Number
+name: String
+coverImage: String
+price: Number
+description:String
+
   constructor (data: any) {
     this.id = data.id
-    this.name = data.name
-    this.coverImage = data.coverImage
-    this.price = data.price
-    this.images = data.images
+    this.name = data.attributes.Name
+    this.coverImage = data.attributes.CoverImage
+    this.price = data.attributes.Price
+    this.description = data.attributes.Description
+
   }
 }

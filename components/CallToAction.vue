@@ -4,7 +4,7 @@
       Empower your Style
     </h1>
     <p>
-      Complete your look with our collection of featured Products
+      Complete your look with our collection of featured Hats and Beanies
     </p>
   </div>
 </template>e>

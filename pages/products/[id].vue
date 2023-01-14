@@ -4,14 +4,14 @@
 <div class="flex flex-wrap ">
 
   <div class=" w-full md:w-1/2 h-full">
-<img :src="product.img" alt="" class="shadow-lg  product-image">
+<img :src="product.coverImage" alt="" class="shadow-lg  product-image">
   </div>
   <div class=" w-full md:w-1/2 p-5 px-14">
 <div class="">
   <h1 class="text-4xl mb-10">{{ product.name }}  </h1>
   <p class="text-sm text-gray-400 mb-5">
 
-    {{ product.description }}
+    {{ product }}
   </p>
 
 </div>
@@ -44,15 +44,26 @@
 <script>
 import { AppState } from "~~/AppState.ts";
 import { computed } from "@vue/reactivity";
+import { productsService } from "~~/service/ProductsService.ts";
 export default {
 
   setup () {
+onMounted(()=>{
+getProductDetails()
+})
 
+async function getProductDetails(){
+  try {
+await productsService.getProductById(route.params.id)
+  } catch (error) {
+    logger.log(error)
+  }
+}
     const route = useRoute()
-    console.log(route.params.id);
+    // console.log(route.params.id);
     return {
       product: computed(()=>
-        AppState.featuredProducts.find(f=> f.id == route.params.id)
+        AppState.products.find(f=> f.id == route.params.id)
       ),
 
     }

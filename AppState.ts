@@ -4,7 +4,7 @@ export const AppState = reactive({
   user: null,
   account: {} as Account,
   products: [] as Product[],
-
+activeProduct:{} as Product,
 
 
 
