@@ -11,6 +11,7 @@
         <div class="text-center">
           <router-link to="/" class="text-base  no-underline hover:text-gray-800">Home</router-link>
           <router-link to="/about" class="ml-4 text-base no-underline hover:text-gray-800">About</router-link>
+          <router-link to="/cart" class="ml-4 text-base no-underline hover:text-gray-800">cart</router-link>
         </div>
       </div>
       <div class="w-1/3">

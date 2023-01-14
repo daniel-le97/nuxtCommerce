@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div>
         <div v-for="(product, index) in cartItems" :key="index">
             {{ product.name }} - {{ product.price }}
@@ -21,24 +21,4 @@ export default {
         ...mapActions('cart', ['removeProduct', 'clearCart'])
     }
 }
-</script> -->
-<template>
-  <div class="component">
-
-
-  </div>
-</template>
-
-
-<script>
-export default {
-  setup(){
-    return {}
-  }
-}
 </script>
-
-
-<style lang="scss" scoped>
-
-</style>

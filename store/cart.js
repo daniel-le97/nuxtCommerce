@@ -1,7 +1,3 @@
-export const state = () => ({
-  items: [],
-  total: 0,
-});
 
 export const mutations = {
   addProduct(state, product) {

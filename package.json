@@ -21,7 +21,6 @@
     "vue-tsc": "^1.0.19"
   },
   "dependencies": {
-    "nuxt-swiper": "^0.1.6",
-    "vuex": "^4.1.0"
+    "nuxt-swiper": "^0.1.6"
   }
 }
