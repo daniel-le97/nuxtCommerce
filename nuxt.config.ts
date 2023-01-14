@@ -7,8 +7,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     '@vueuse/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/strapi',
-
+    '@nuxtjs/strapi'
   ],
   strapi: { url: 'http://localhost:1337' },
   typescript: {
