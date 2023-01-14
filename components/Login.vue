@@ -41,7 +41,7 @@
 <script>
 import { computed } from 'vue'
 import { AppState } from '../AppState'
-import { AuthService } from '../services/AuthService'
+// import { AuthService } from '../services/AuthService'
 export default {
   setup () {
     return {
@@ -49,11 +49,11 @@ export default {
       account: computed(() => AppState.account),
       async login () {
         const { login } = useStrapiAuth()
-        const isAuthenticated = await login({ identifier: '', password: '' })
-        console.log(isAuthenticated)
+        const isAuthenticated = await login({ identifier: 'dan' })
+        logger.log(isAuthenticated)
       },
       async logout () {
-        await AuthService.logout({ returnTo: window.location.origin })
+        // await AuthService.logout({ returnTo: window.location.origin })
       }
     }
   }

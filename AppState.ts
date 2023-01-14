@@ -3,9 +3,6 @@ import { Product } from './models/Products'
 export const AppState = reactive({
   user: null,
   account: {} as Account,
-  products: [] as Product[],
-
-
-
+  products: [] as Product[]
 
 })
