@@ -4,12 +4,7 @@
     <CallToAction />
     <FeaturedProducts />
     <AboutUs />
-    <button @click="getDogs">
-      get
-    </button>
-    <div v-if="dogs">
-      {{ dogs }}
-    </div>
+
   </div>
 </template>
 
@@ -26,7 +21,9 @@ fetchProducts()
 
 async function fetchProducts() {
       try {
-       productsService.getProducts()
+const { find } = useStrapi()
+  const response = await find('products')
+      console.log(response);
       } catch (err) {
         console.error(err);
       }

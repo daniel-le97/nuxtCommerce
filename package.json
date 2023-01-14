@@ -27,6 +27,6 @@
     "pinia": "^2.0.28"
   },
   "overrides": {
-    "vue": "latest"
+    "vue": "3.2.45"
   }
 }
