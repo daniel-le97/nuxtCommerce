@@ -7,8 +7,8 @@
 
     <div class="absolute top-0 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
         <div class="p-4 text-white text-center">
-            <h4 class="text-lg font-medium">Card Title</h4>
-            <p class="text-gray-600">Card body text goes here</p>
+            <h4 class="text-lg font-medium">{{product.name}}</h4>
+            <p class="text-gray-600"> {{ product.price }}  </p>
         </div>
     </div>
 </div>
@@ -20,7 +20,10 @@
 
 <script>
 export default {
-  setup(){
+  props:{
+    product:{type:Object,required:true}
+  },
+  setup(props){
     return {}
   }
 }
