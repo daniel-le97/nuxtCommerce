@@ -11,6 +11,5 @@ description:String
     this.coverImage = data.attributes.CoverImage
     this.price = data.attributes.Price
     this.description = data.attributes.Description
-
   }
 }
