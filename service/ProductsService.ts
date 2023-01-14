@@ -1,3 +1,5 @@
+
+
 class ProductsService{
 
   async getProducts(){
@@ -9,12 +11,10 @@ class ProductsService{
     //     const products = await res.json();
     //    console.log(products);
 
-    const {find} = useStrapi()
+   const { find } = useStrapi()
+  const res = await find('products')
 
 
-
-    const res = await find('products')
-    console.log(res);
 
   }
 }

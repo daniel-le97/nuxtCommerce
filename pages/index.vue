@@ -21,9 +21,7 @@ fetchProducts()
 
 async function fetchProducts() {
       try {
-const { find } = useStrapi()
-  const response = await find('products')
-      console.log(response);
+productsService.getProducts()
       } catch (err) {
         console.error(err);
       }
