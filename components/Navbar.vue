@@ -1,5 +1,5 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-
   <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-5   transition-all" :class="{'bg-white shadow-md': isVisible, '    bg-custom text-white transition-all ': !isVisible}">
     <div class="container mx-auto flex flex-wrap items-center justify-between">
       <div class="w-1/3">
@@ -9,43 +9,45 @@
       </div>
       <div class="w-1/3 hidden md:block">
         <div class="text-center">
-          <router-link to="/" class="text-base  no-underline hover:text-gray-800">Home</router-link>
-          <router-link to="/about" class="ml-4 text-base no-underline hover:text-gray-800">About</router-link>
-          <router-link to="/cart" class="ml-4 text-base no-underline hover:text-gray-800">cart</router-link>
+          <router-link to="/" class="text-base  no-underline hover:text-gray-800">
+            Home
+          </router-link>
+          <router-link to="/about" class="ml-4 text-base no-underline hover:text-gray-800">
+            About
+          </router-link>
+          <router-link to="/cart" class="ml-4 text-base no-underline hover:text-gray-800">
+            cart
+          </router-link>
         </div>
       </div>
       <div class="w-1/3">
         <div class="flex justify-end">
           <button class=" text-xl leading-none p-2 rounded-full hover:bg-gray-100 hover:text-gray-600">
-                    Login
+            Login
           </button>
         </div>
       </div>
     </div>
   </nav>
-
-
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isVisible: true
     }
   },
-  mounted() {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  beforeDestroy() {
+  beforeUnmount () {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
-    handleScroll() {
-
+    handleScroll () {
       if (window.scrollY > 50) {
         this.isVisible = false
-
       } else {
         this.isVisible = true
       }
@@ -54,7 +56,6 @@ export default {
 }
 </script>
 <style lang="scss">
-
 
 .bg-custom{
   background-color:rgba(0, 0, 0, 0.584);

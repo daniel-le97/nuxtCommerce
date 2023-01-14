@@ -23,5 +23,6 @@
   },
   // Auto-complete `.value` attribute when volar is installed
   "volar.autoCompleteRefs": true,
-  "cSpell.words": ["pinia", "sidebase"]
+  "cSpell.words": ["pinia", "sidebase", "Strapi"],
+  "nuxt.isNuxtApp": false
 }
