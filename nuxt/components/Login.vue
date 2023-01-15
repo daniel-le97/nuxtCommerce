@@ -11,7 +11,6 @@
     <button
 
       class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0 m-2"
-      @click="getUser"
     >
       user
     </button>
@@ -56,13 +55,14 @@ export default {
     return {
       user: computed(() => AppState.user),
       account: computed<Account>(() => AppState.account),
-      async login () {
-        const route = useRoute()
+      login () {
+        // const route = useRoute()
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { getProviderAuthenticationUrl, authenticateProvider } = useStrapiAuth()
         window.location = getProviderAuthenticationUrl('auth0')
         // const { authenticateProvider } = useStrapiAuth()
-        const hi = await authenticateProvider('auth0', route.query.access_token)
-        logger.log(hi.user.value)
+        // const hi = await authenticateProvider('auth0', route.query.access_token)
+        // logger.log(hi.user.value)
       }
     }
   }
