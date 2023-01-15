@@ -3,9 +3,9 @@
     <div class="relative shadow-xl product-card rounded-lg">
       <img class=" object-cover  rounded-lg shadow-xl shadow-slate-400 transition-all" :src="product.coverImage" alt="image">
 
-      <div class="absolute  top-32 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
+      <div class="absolute  top-96 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
 
-        <div class="p-4 text-white mt-10 text-center  ">
+        <div class=" text-white mt-10 text-center  ">
           <h4 class="text-5xl font-bold text-shadow  ">
             {{ product.name }}
           </h4>
@@ -21,7 +21,7 @@
 <script>
 
 import { Product } from "~~/models/Products.ts";
-import { AppState } from '../AppState'
+
 
 export default {
   props: {
@@ -38,16 +38,18 @@ export default {
 <style lang="scss" scoped>
 .product-card{
    transition: all 0.5s ease-out !important;
-   width: 100px;
+   width: 150px;
+   height: 600px;
 }
 
 .product-card:hover{
-width: 300px;
+width: 400px;
   transition: all 0.5s ease-out !important;
 }
+
 .product-card img{
   transition: all 3.3s ease-out !important;
-  height: 300px;
+  height: 100%;
 }
 .product-card:hover .absolute {
 
