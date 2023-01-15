@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+// import { NUXT_PUBLIC_STRAPI_URL } from './.env'
 
 export default defineNuxtConfig({
   modules: [
@@ -9,7 +10,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/strapi'
   ],
-  strapi: { url: 'http://localhost:1337' },
+  strapi: { url: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337' },
   typescript: {
     shim: false
   },
