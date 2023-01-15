@@ -1,8 +1,10 @@
 <template>
   <div class="p-3 mt-10 flex">
-    <div class="w-3/4 relative">
+    <div class="w-2/4 relative ">
       <img src="https://images.unsplash.com/photo-1591035897819-f4bdf739f446?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="">
-      <div class=" w-/4 px-5 flex flex-col  top-0 absolute  rounded-sm shadow-xl bg-white py-5">
+
+    </div>
+     <div class=" w-2/4 px-5 flex flex-col  rounded-sm shadow-xl bg-white py-5">
       <div class="flex justify-start">
           <img src="https://cdn-icons-png.flaticon.com/512/7199/7199551.png" alt="goodVibes Image" width="90">
       </div>
@@ -13,8 +15,6 @@
           <img src="https://cdn-icons-png.flaticon.com/512/4207/4207745.png" alt="goodVibes Image" width="90">
       </div>
 </div>
-    </div>
-
   </div>
 </template>
 
@@ -35,7 +35,11 @@ export default {
 
 .absolute{
   top: 40px;
-  left: 900px;
+  left: 400px;
 width: 500px;
+//when screen is 768px OR LESS
+@media only screen and (max-width: 768px){
+
+}
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center my-5 container  ">
+  <div class="text-center my-5 container flex flex-col ">
     <h1 class="text-4xl mb-2">
       Empower your Style
     </h1>

@@ -10,13 +10,10 @@ class ProductsService {
 
     }
     )
+    console.log(res.data);
+
     // eslint-disable-next-line array-callback-return
-    res.data.map((d) => {
-      // @ts-ignore
-      if (d.attributes?.category?.data?.attributes?.Name === 'Hats') {
-        AppState.hats.push(new Product(d))
-      } else { AppState.glasses.push(new Product(d)) }
-    })
+    AppState.products = res.data.map((d) => new Product(d))
     // console.log(AppState.hats);
     // console.log(AppState.glasses);
   }

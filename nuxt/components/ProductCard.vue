@@ -1,11 +1,11 @@
 <template>
   <nuxt-link :to="`/products/${product.id}`">
     <div class="relative shadow-xl product-card rounded-lg">
-      <img class=" object-cover  rounded-lg shadow-xl shadow-slate-400 transition-all" :src="product.coverImage" alt="image">
+      <img class=" object-cover  image rounded-lg shadow-xl shadow-slate-400 transition-all" :src="product.coverImage" alt="image">
 
-      <div class="absolute  top-96 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
+      <div class="absolute  top-64 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
         <div class=" text-white mt-10 text-center  ">
-          <h4 class="text-5xl font-bold text-shadow  ">
+          <h4 class="text-3xl font-bold text-shadow  ">
             {{ product.name }}
           </h4>
         </div>
@@ -33,12 +33,14 @@ export default {
 <style lang="scss" scoped>
 .product-card{
    transition: all 0.5s ease-out !important;
-   width: 150px;
-   height: 600px;
+   width: 125px;
+   height: 400px;
 }
+.image{
 
+}
 .product-card:hover{
-width: 400px;
+width: 300px;
   transition: all 0.5s ease-out !important;
 }
 
