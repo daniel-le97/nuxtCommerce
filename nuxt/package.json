@@ -29,7 +29,8 @@
     "nuxt-swiper": "^0.1.6",
     "pinia": "^2.0.28",
     "strapi-plugin-populate-deep": "^1.1.2",
-    "stripe": "^11.6.0"
+    "stripe": "^11.6.0",
+    "sweetalert2": "^11.4.8"
   },
   "overrides": {
     "vue": "3.2.45"

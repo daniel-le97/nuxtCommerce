@@ -6,11 +6,16 @@ class AccountService {
       let account
       account = await findOne('users', user.id)
       if (!account) {
-        account = await (await create('users', user)).data.attributes
+        account = await this.createAccountIfNeeded(user)
       }
     } catch (error) {
-
+      pop.error(error, 'is strapi running?')
     }
+  }
+
+  async createAccountIfNeeded (user: any) {
+    const newAccount = await create('users', user)
+    return newAccount
   }
 }
 export const accountService = new AccountService()

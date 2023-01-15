@@ -4,7 +4,7 @@ module.exports = ({ env }) => ({
   connection: {
     client: 'sqlite',
     connection: {
-      filename: path.join(__dirname, '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+      connectionString: env('POSTGRE_STRING')
     },
     useNullAsDefault: true,
   },

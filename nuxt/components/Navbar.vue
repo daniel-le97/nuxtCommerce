@@ -3,12 +3,18 @@
   <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-2   transition-all" :class="{'bg-white shadow-md': isVisible, '    bg-custom text-white transition-all ': !isVisible}">
     <div class="container mx-auto flex flex-wrap items-center justify-between">
       <div class="w-1/3">
+<<<<<<< HEAD
         <router-link to="/" class="text-lg font-medium  no-underline" active-class="active-link">
          <img src="../assets/Logo.png" alt="" width="80"  class="shadow-xl rounded-xl">
+=======
+        <router-link to="/" class="text-lg font-medium  no-underline">
+          <img src="../assets/Logo.png" alt="" width="80" class="shadow-xl rounded-xl">
+>>>>>>> 0bb7fc25 (folders)
         </router-link>
       </div>
       <div class="w-1/3 hidden md:block">
         <div class="text-center">
+<<<<<<< HEAD
 
 
           <router-link to="/cart" class="ml-4 text-base no-underline hover:text-gray-800" active-class="active-link">
@@ -19,14 +25,23 @@
           </router-link>
           <router-link to="/about" class="ml-4 text-base no-underline hover:text-gray-800" active-class="active-link">
          About Us
+=======
+          <router-link to="/cart" class="ml-4 text-base no-underline hover:text-gray-800">
+            Cart
           </router-link>
-
+          <router-link to="/checkout" class="ml-4 text-base no-underline hover:text-gray-800">
+            Checkout
+          </router-link>
+          <router-link to="/about" class="ml-4 text-base no-underline hover:text-gray-800">
+            About Us
+>>>>>>> 0bb7fc25 (folders)
+          </router-link>
         </div>
       </div>
       <div class="w-1/3">
         <div class="flex justify-end">
           <button class=" text-xl leading-none p-2 rounded-full hover:bg-gray-100 hover:text-gray-600">
-            <Login />
+            <LoginBox />
           </button>
         </div>
       </div>
@@ -37,7 +52,10 @@
 <script>
 // import Login from './Login.vue'
 
+import LoginBox from './LoginBox.vue'
+
 export default {
+  components: { LoginBox },
   data () {
     return {
       isVisible: true
