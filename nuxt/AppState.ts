@@ -9,6 +9,17 @@ export const AppState = reactive({
   glasses: [] as Product[],
   cart: {
     products: [] as Product[],
-    total: 0
+    total: 10
+
   }
 })
+
+function getTotal(){
+
+  AppState.cart.total = AppState.cart.products.reduce((total, product) => {
+    return total + 10 ;
+}, 0);
+
+}
+
+getTotal()

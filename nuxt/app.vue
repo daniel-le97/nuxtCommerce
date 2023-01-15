@@ -4,7 +4,7 @@
 <template>
   <div>
     <Navbar />
-    <NuxtPage class="mt-20" />
+    <NuxtPage class="mt-24" />
     <FooterBar class=" static" />
   </div>
 </template>

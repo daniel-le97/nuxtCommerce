@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/strapi'
   ],
-  strapi: { url: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337' },
+  strapi: { url: process.env.NUXT_PUBLIC_STRAPI_URL || 'http://localhost:1337',
+  },
   typescript: {
     shim: false
   },
@@ -26,7 +27,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  
+
   css: [
     '@/assets/scss/main.scss'
   ]
