@@ -8,21 +8,39 @@
 </template>
 
 <script>
+
+import { AppState } from "~~/AppState.ts"
+import { cartService } from "~~/service/CartService.ts"
 import { productsService } from '../service/ProductsService'
 export default {
   setup () {
+
     onMounted(() => {
-      fetchProducts()
+
+  getGlasses()
+
+    })
+    onUnmounted(()=>{
+// clearCart()
     })
 
-    async function fetchProducts () {
+    async function getGlasses () {
       try {
-        await productsService.getProducts()
+AppState.glasses = []
+ await productsService.getProducts()
+
       } catch (err) {
         logger.error(err)
       }
     }
+async function clearCart(){
+  try {
+cartService.clearCart()
 
+  } catch (error) {
+    logger.error(error)
+  }
+}
     return {
       products: []
 

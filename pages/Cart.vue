@@ -1,30 +1,66 @@
 <template>
-  <div>
-    <h1>My Cart</h1>
-    <div v-for="(item, index) in cartItems" :key="index">
-      {{ item.name }} - {{ item.price }}
-      <button @click="removeFromCart(index)">Remove</button>
+  <div class="container mt-24">
+    <h1 class="text-4xl"> Cart</h1>
+    <div class="mt-5 rounded-md shadow-lg shadow-slate-400 p-5 text-dark" v-for="(c, index) in cart" :key="index">
+    <div class="flex justify-between">
+      <img :src="c.coverImage" alt="" class="image shadow-xl shadow-slate-400 rounded-sm">
+
+      <div class="text-center  items-center flex text-xl">
+       <h1> {{ c.name }}</h1>
+      </div>
+      <div class="flex">
+        <p class="text-center mr-10  items-center flex font-bold">
+          ${{ c.price }}
+        </p>
+  <RemoveFromCart :cartId="c.cartId" />
+      </div>
     </div>
-    <div>Total: {{ cartTotal }}</div>
-    <div>Items in cart: {{ cartCount }}</div>
-    <button @click="clearCart">Clear Cart</button>
+
+    </div>
+
+    <button class="mt-5 text-3xl" @click="clearCart">Clear Cart</button>
   </div>
 </template>
 
 <script>
-import { cartStore } from '@/store/cart'
+import { computed } from "@vue/reactivity";
+
+import { AppState } from "~~/AppState.ts";
+import { cartService } from "~~/service/CartService.ts";
 
 export default {
   setup() {
-
+onMounted(()=>{
+  getCart()
+})
+async function getCart(){
+  try {
+await cartService.getCart()
+  } catch (error) {
+    logger.error(error)
+  }
+}
     return {
-      cartStore:useState(),
-      cartItems: cartStore.items,
-      cartTotal: cartStore.total,
-      cartCount: cartStore.counter,
-      removeFromCart: cartStore.removeProduct,
-      clearCart: cartStore.clearCart
+    cart:computed(() => AppState.cart),
+    async clearCart(){
+      try {
+        console.log(AppState.cart);
+// cartService.clearCart()
+      } catch (error) {
+        logger.error(error)
+      }
+    }
     }
   },
 }
 </script>
+
+<style scoped lang="scss" >
+
+
+.image{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+</style>

@@ -19,20 +19,8 @@ AppState.hats.push(new Product(d))
  AppState.glasses.push(new Product(d))
 
 })
-console.log(AppState.hats);
-console.log(AppState.glasses);
-
-
-    // const res = await find<Product>('products',{
-    //   params:{
-    //     _where:{category:'glasses'}
-    //   }
-    // })
-
-
-
-
-    // AppState.products = products
+// console.log(AppState.hats);
+// console.log(AppState.glasses);
 
 
   }
@@ -41,9 +29,21 @@ console.log(AppState.glasses);
     const { findOne } = useStrapi()
     const res = await findOne<Product>('products', productId)
 
+
     // AppState.activeProduct = res((r: any) => new Product(r))
 
-    AppState.activeProduct = new Product(res)
+    AppState.activeProduct = new Product(res.data)
+  }
+
+
+
+  async addProductToOrder(product:Product){
+    logger.log(product)
+    const {create} = useStrapi()
+   const res = await create('carts',{Item:product})
+console.log(res.data);
+const newCart = new Product(res.data)
+AppState.cart.push(newCart)
   }
 }
 export const productsService = new ProductsService()

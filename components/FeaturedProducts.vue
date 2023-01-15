@@ -17,7 +17,7 @@ import { AppState } from "~~/AppState.ts";
 export default {
   setup () {
     return {
-      products: computed(() => AppState.products)
+      products: computed(() => AppState.glasses)
     }
   }
 }

@@ -3,15 +3,15 @@
 
 <div class="flex flex-wrap ">
 
-  <div class=" w-full md:w-1/2 h-full">
-<img :src="product.coverImage" alt="" class="shadow-lg  product-image">
+  <div class=" w-full md:w-1/2 h-full justify-center flex">
+<img :src="activeProduct.coverImage" alt="" class=" shadow-lg  shadow-slate-400 product-image rounded-sm">
   </div>
   <div class=" w-full md:w-1/2 p-5 px-14">
 <div class="">
-  <h1 class="text-4xl mb-10">{{ product.name }}  </h1>
-  <p class="text-sm text-gray-400 mb-5">
+  <h1 class="text-4xl mb-10">{{ activeProduct.name }}  </h1>
+  <p class="text-lg text-gray-400 mb-5">
 
-    {{ product }}
+    {{ activeProduct.description }}
   </p>
 
 </div>
@@ -19,7 +19,7 @@
 <div class="flex justify-between">
   <div class="">
     <h2 class="font-bold text-gray-400 text-2xl">Price</h2>
-    <p class="text-red-400 font-bold text-2xl"> ${{ product.price }} </p>
+    <p class="text-red-400 font-bold text-2xl"> ${{ activeProduct.price }} </p>
   </div>
   <div class="">
     <h2 class="font-bold text-gray-400 text-2xl">Quantity</h2>
@@ -32,7 +32,7 @@
 
 
 <div class="flex justify-center">
-<AddToCart :productId="product.id" />
+<AddToCart :product="activeProduct" />
 </div>
 
   </div>
@@ -45,13 +45,17 @@
 import { AppState } from "~~/AppState.ts";
 import { computed } from "@vue/reactivity";
 import { productsService } from "~~/service/ProductsService.ts";
+
 export default {
 
   setup () {
 onMounted(()=>{
 getProductDetails()
-})
 
+})
+onUnmounted(()=>{
+  clearCart()
+})
 async function getProductDetails(){
   try {
 await productsService.getProductById(route.params.id)
@@ -59,11 +63,16 @@ await productsService.getProductById(route.params.id)
     logger.log(error)
   }
 }
+
+async function clearCart(){
+  
+}
     const route = useRoute()
     // console.log(route.params.id);
     return {
-      product: computed(()=>
-        AppState.products.find(f=> f.id == route.params.id)
+      route,
+      activeProduct: computed(()=>
+        AppState.activeProduct
       ),
 
     }
@@ -74,7 +83,7 @@ await productsService.getProductById(route.params.id)
 <style lang="scss" scoped>
 .product-image{
   height: 50vh;
-  width: auto;
+  width: 100% !important;
   object-fit: cover;
 }
 </style>

@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "orders",
+  "collectionName": "carts",
   "info": {
-    "singularName": "order",
-    "pluralName": "orders",
-    "displayName": "Order",
-    "description": ""
+    "singularName": "cart",
+    "pluralName": "carts",
+    "displayName": "Cart"
   },
   "options": {
     "draftAndPublish": true

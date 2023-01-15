@@ -3,10 +3,10 @@
     <div class="relative shadow-xl product-card rounded-lg">
       <img class=" object-cover  rounded-lg shadow-xl shadow-slate-400 transition-all" :src="product.coverImage" alt="image">
 
-      <div class="absolute top-0 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
+      <div class="absolute  top-32 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
 
         <div class="p-4 text-white mt-10 text-center  ">
-          <h4 class="text-2xl font-bold">
+          <h4 class="text-5xl font-bold text-shadow  ">
             {{ product.name }}
           </h4>
 
@@ -37,14 +37,16 @@ export default {
 
 <style lang="scss" scoped>
 .product-card{
-    transition: width 0.5s ease-in-out;
+   transition: all 0.5s ease-out !important;
+   width: 100px;
 }
 
 .product-card:hover{
 width: 300px;
+  transition: all 0.5s ease-out !important;
 }
 .product-card img{
-  transition: all 0.3s ease-out;
+  transition: all 3.3s ease-out !important;
   height: 300px;
 }
 .product-card:hover .absolute {
@@ -54,14 +56,14 @@ width: 300px;
 .product-card .absolute {
     transition: all 0.3s ease-out;
 
-    opacity: 0;
+
 }
 .product-card:hover .absolute {
   transition: all 0.3s ease-out;
 border-radius: 8px;
- background-color: rgba(0, 0, 0, 0.623);
- backdrop-filter: blur(4px);
-    opacity: 1;
+
+
+
 
 }
 .product-card:hover img{
