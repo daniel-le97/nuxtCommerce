@@ -2,13 +2,20 @@
 <template>
   <span class="navbar-text">
     <button
-      v-if="!user.isAuthenticated"
+
       class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0"
       @click="login"
     >
       Login
     </button>
-    <div v-else>
+    <button
+
+      class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0 m-2"
+      @click="getUser"
+    >
+      user
+    </button>
+    <!-- <div v-else>
       <div class="dropdown dropstart my-2 my-lg-0">
         <div
           type="button"
@@ -34,26 +41,34 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </span>
 </template>
 
 <script>
-import { computed } from 'vue'
+// import { computed } from 'vue'
 import { AppState } from '../AppState'
+import { Account } from '../models/Account'
 // import { AuthService } from '../services/AuthService'
 export default {
   setup () {
     return {
       user: computed(() => AppState.user),
-      account: computed(() => AppState.account),
+      account: computed<Account>(() => AppState.account),
       async login () {
-        const { login } = useStrapiAuth()
-        const isAuthenticated = await login({ identifier: 'dan' })
-        logger.log(isAuthenticated)
+        const { getProviderAuthenticationUrl } = useStrapiAuth()
+        window.location = getProviderAuthenticationUrl('auth0')
+        await this.getUser()
       },
-      async logout () {
+      async getUser () {
         // await AuthService.logout({ returnTo: window.location.origin })
+        // const { authenticateProvider } = useStrapiAuth()
+        // const route = useRoute()
+        // const hi = await authenticateProvider('auth0', route.query.access_token)
+        const { fetchUser } = useStrapiAuth()
+        const user = await fetchUser()
+        logger.log(user.value)
+        // logger.log(hi.user.value)
       }
     }
   }

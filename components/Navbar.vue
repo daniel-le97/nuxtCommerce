@@ -23,7 +23,7 @@
       <div class="w-1/3">
         <div class="flex justify-end">
           <button class=" text-xl leading-none p-2 rounded-full hover:bg-gray-100 hover:text-gray-600">
-            Login
+            <Login />
           </button>
         </div>
       </div>
@@ -32,6 +32,8 @@
 </template>
 
 <script>
+// import Login from './Login.vue'
+
 export default {
   data () {
     return {

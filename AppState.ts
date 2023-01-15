@@ -8,5 +8,5 @@ export const AppState = reactive({
 hats:[] as Product[],
 glasses:[] as Product[],
 
-cart:[] as Product[]
+cart:[] 
 })
