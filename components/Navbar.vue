@@ -12,12 +12,14 @@
           <router-link to="/" class="text-base  no-underline hover:text-gray-800">
             Home
           </router-link>
-          <router-link to="/about" class="ml-4 text-base no-underline hover:text-gray-800">
-            About
-          </router-link>
+
           <router-link to="/cart" class="ml-4 text-base no-underline hover:text-gray-800">
-            cart
+            Cart
           </router-link>
+          <router-link to="/checkout" class="ml-4 text-base no-underline hover:text-gray-800">
+           Checkout
+          </router-link>
+
         </div>
       </div>
       <div class="w-1/3">

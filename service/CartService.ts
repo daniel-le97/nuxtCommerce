@@ -11,7 +11,7 @@ async getCart(){
 
   res.data.forEach(c=> {
     c.attributes.Item.cartId = c.id
-AppState.cart.push(c.attributes.Item)
+AppState.cart.products.push(c.attributes.Item)
   })
 //  AppState.cart = res.data.map(c=> c.attributes?.Item)
 console.log(AppState.cart);

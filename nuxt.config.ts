@@ -2,6 +2,7 @@
 // import { NUXT_PUBLIC_STRAPI_URL } from './.env'
 
 export default defineNuxtConfig({
+  
   modules: [
     '@sidebase/nuxt-auth',
     '@nuxtjs/tailwindcss',

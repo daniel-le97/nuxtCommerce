@@ -41,7 +41,7 @@ await cartService.getCart()
   }
 }
     return {
-    cart:computed(() => AppState.cart),
+    cart:computed(() => AppState.cart.products),
     async clearCart(){
       try {
         console.log(AppState.cart);
