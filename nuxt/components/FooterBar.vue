@@ -2,13 +2,13 @@
   <footer class="mt-10  ">
     <div class="flex justify-between p-5 bg-slate-900 text-white">
       <div class="footer-section">
-        <nuxt-link to="/about">About Us</nuxt-link>
+       
       </div>
       <div class="footer-section">
-        <nuxt-link to="/faq">FAQ</nuxt-link>
+
       </div>
       <div class="footer-section">
-        <nuxt-link to="/contact">Contact Us</nuxt-link>
+
         <div class="mt-4 flex">
 
           <img src="https://avatars.githubusercontent.com/u/107594367?s=400&u=279c4a706755639789d6b825966e54161df0c7aa&v=4" alt="" width="60" class="rounded-full shadow-md">

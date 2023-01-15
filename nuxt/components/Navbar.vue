@@ -4,14 +4,12 @@
     <div class="container mx-auto flex flex-wrap items-center justify-between">
       <div class="w-1/3">
         <router-link to="/" class="text-lg font-medium  no-underline">
-         <img src="../assets/Sunny Vibe.png" alt="" width="60" height="100" class="shadow-xl rounded-md">
+         <img src="../assets/Logo.png" alt="" width="80"  class="shadow-xl rounded-xl">
         </router-link>
       </div>
       <div class="w-1/3 hidden md:block">
         <div class="text-center">
-          <router-link to="/" class="text-base  no-underline hover:text-gray-800">
-            Home
-          </router-link>
+         
 
           <router-link to="/cart" class="ml-4 text-base no-underline hover:text-gray-800">
             Cart
