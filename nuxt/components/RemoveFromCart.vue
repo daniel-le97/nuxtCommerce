@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="p-2 px-4 text-3xl rounded-md bg-blue-400" @click="removeItem()">
+    <button class="p-2 px-4 text-3xl rounded-md bg-blue-400" @click="removeItem(cartId)">
       Remove
     </button>
   </div>
@@ -13,7 +13,7 @@
 import { cartService } from '../service/CartService'
 
 export default {
-  // props: ['cartId'],
+  props: ['cartId'],
   setup () {
     return {
       async removeItem (cartId) {

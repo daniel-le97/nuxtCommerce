@@ -3,7 +3,7 @@
     <div class="relative shadow-xl product-card rounded-lg">
       <img class=" object-cover  image rounded-lg shadow-xl shadow-slate-400 transition-all" :src="product.coverImage" alt="image">
 
-      <div class="absolute  top-64 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
+      <div class="absolute  b top-64 left-0 w-full  opacity-0 transition-opacity duration-300">
         <div class=" text-white mt-10 text-center  ">
           <h4 class="text-3xl font-bold text-shadow  ">
             {{ product.name }}
@@ -11,6 +11,8 @@
         </div>
       </div>
     </div>
+
+
   </nuxt-link>
 </template>
 
@@ -48,10 +50,7 @@ width: 300px;
   transition: all 3.3s ease-out !important;
   height: 100%;
 }
-.product-card:hover .absolute {
 
-    opacity: 0.8;
-}
 .product-card .absolute {
     transition: all 0.3s ease-out;
 
@@ -59,6 +58,7 @@ width: 300px;
 .product-card:hover .absolute {
   transition: all 0.3s ease-out;
 border-radius: 8px;
+opacity: 1;
 
 }
 .product-card:hover img{

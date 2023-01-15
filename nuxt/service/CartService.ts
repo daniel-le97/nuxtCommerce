@@ -26,7 +26,7 @@ async removeFromCart(cartId:string){
 
  deleteOne('carts',cartId)
 
- AppState.cart= AppState.cart.filter(c=> c.cartId != cartId)
+ AppState.cart.products= AppState.cart.products.filter(c=> c.cartId != cartId)
 }
  async clearCart(){
 const { find, delete: deleteOne } = useStrapi();

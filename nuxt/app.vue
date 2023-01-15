@@ -5,6 +5,6 @@
   <div>
     <Navbar />
     <NuxtPage class="mt-20" />
-    <FooterBar />
+    <FooterBar class=" static" />
   </div>
 </template>

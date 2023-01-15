@@ -20,6 +20,7 @@ async addProduct(product){
   try {
     logger.log(product)
 await productsService.addProductToOrder(product)
+
   } catch (error) {
     logger.log(error)
   }
