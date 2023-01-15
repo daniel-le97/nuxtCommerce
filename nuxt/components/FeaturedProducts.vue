@@ -10,7 +10,6 @@
 
 <script>
 
-
 export default {
   setup () {
     return {
@@ -19,6 +18,3 @@ export default {
   }
 }
 </script>
-
-
-

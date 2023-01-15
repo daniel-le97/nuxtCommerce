@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // import { initialize } from '@bcwdev/auth0provider-client'
 // import { AppState } from '../AppState'
 // import { audience, clientId,  } from '../.env'
@@ -42,3 +43,14 @@
 //   }
 //   return config
 // }
+
+class AuthService {
+  async login (location: any, route: any) {
+    const { getProviderAuthenticationUrl, authenticateProvider } = useStrapiAuth()
+    location = getProviderAuthenticationUrl('auth0')
+    // const { authenticateProvider } = useStrapiAuth()
+    const hi = await authenticateProvider('auth0', route.query.access_token)
+    return hi.user.value
+  }
+}
+export const authService = new AuthService()

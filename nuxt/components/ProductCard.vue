@@ -4,24 +4,19 @@
       <img class=" object-cover  rounded-lg shadow-xl shadow-slate-400 transition-all" :src="product.coverImage" alt="image">
 
       <div class="absolute  top-96 left-0 w-full h-full  opacity-0 transition-opacity duration-300">
-
         <div class=" text-white mt-10 text-center  ">
           <h4 class="text-5xl font-bold text-shadow  ">
             {{ product.name }}
           </h4>
-
         </div>
       </div>
-
-
     </div>
   </nuxt-link>
 </template>
 
 <script>
 
-import { Product } from "~~/models/Products.ts";
-
+import { Product } from '~~/models/Products.ts'
 
 export default {
   props: {
@@ -58,14 +53,10 @@ width: 400px;
 .product-card .absolute {
     transition: all 0.3s ease-out;
 
-
 }
 .product-card:hover .absolute {
   transition: all 0.3s ease-out;
 border-radius: 8px;
-
-
-
 
 }
 .product-card:hover img{

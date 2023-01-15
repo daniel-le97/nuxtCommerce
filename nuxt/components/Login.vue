@@ -49,6 +49,7 @@
 // import { computed } from 'vue'
 import { AppState } from '../AppState'
 import { Account } from '../models/Account'
+// import { authService } from '../service/AuthService'
 // import { AuthService } from '../services/AuthService'
 export default {
   setup () {
@@ -56,19 +57,12 @@ export default {
       user: computed(() => AppState.user),
       account: computed<Account>(() => AppState.account),
       async login () {
-        const { getProviderAuthenticationUrl } = useStrapiAuth()
+        const route = useRoute()
+        const { getProviderAuthenticationUrl, authenticateProvider } = useStrapiAuth()
         window.location = getProviderAuthenticationUrl('auth0')
-        await this.getUser()
-      },
-      async getUser () {
-        // await AuthService.logout({ returnTo: window.location.origin })
         // const { authenticateProvider } = useStrapiAuth()
-        // const route = useRoute()
-        // const hi = await authenticateProvider('auth0', route.query.access_token)
-        const { fetchUser } = useStrapiAuth()
-        const user = await fetchUser()
-        logger.log(user.value)
-        // logger.log(hi.user.value)
+        const hi = await authenticateProvider('auth0', route.query.access_token)
+        logger.log(hi.user.value)
       }
     }
   }
