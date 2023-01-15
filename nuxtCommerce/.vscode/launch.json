@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Strapi Development",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "develop"],
+      "env": {
+        "NODE_ENV": "development",
+        "STRAPI_ADMIN_JWT_SECRET": "yoursecretkey"
+      }
+    }
+  ]
+}

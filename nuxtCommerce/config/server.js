@@ -4,9 +4,9 @@ module.exports = ({ env }) => ({
   app: {
     keys: env.array("APP_KEYS"),
   },
-  url: "https://strapi-nuxt.apps.devopportunities.dev" || 'https://localhost:3000',
-  proxy: true,
-  admin: {
-    autoOpen: true,
-  },
+  // url: 'https://localhost:3000',
+  // proxy: true,
+  // admin: {
+  //   autoOpen: true,
+  // },
 });
