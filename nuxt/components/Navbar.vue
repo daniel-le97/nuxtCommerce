@@ -1,10 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-5   transition-all" :class="{'bg-white shadow-md': isVisible, '    bg-custom text-white transition-all ': !isVisible}">
+  <nav class="fixed w-full z-10 top-0 bg-white shadow-md p-2   transition-all" :class="{'bg-white shadow-md': isVisible, '    bg-custom text-white transition-all ': !isVisible}">
     <div class="container mx-auto flex flex-wrap items-center justify-between">
       <div class="w-1/3">
         <router-link to="/" class="text-lg font-medium  no-underline">
-          Your Brand
+         <img src="../assets/Sunny Vibe.png" alt="" width="60" height="100" class="shadow-xl rounded-md">
         </router-link>
       </div>
       <div class="w-1/3 hidden md:block">
@@ -18,6 +18,9 @@
           </router-link>
           <router-link to="/checkout" class="ml-4 text-base no-underline hover:text-gray-800">
            Checkout
+          </router-link>
+          <router-link to="/about" class="ml-4 text-base no-underline hover:text-gray-800">
+         About Us
           </router-link>
 
         </div>
