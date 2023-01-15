@@ -1,5 +1,5 @@
 <template>
-  <div id="iban-element" class="mt-2 stripe-iban-element"></div>
+  <div id="iban-element" class="mt-2 stripe-iban-element" />
 </template>
 
 <script>
@@ -9,8 +9,11 @@ loadStripe.setLoadParameters({ advancedFraudSignals: false }) // https://github.
 let stripe, elements
 
 export default {
+  beforeUnmount () {
+    this.destroyStripeIbanElement()
+  },
   methods: {
-    async loadStripeWhenModalOpens() {
+    async loadStripeWhenModalOpens () {
       if (!stripe) {
         stripe = await loadStripe(this.$config.stripePublishableKey)
         elements = stripe.elements()
@@ -19,7 +22,7 @@ export default {
         const iban = elements.create('iban', {
           supportedCountries: ['SEPA'],
           placeholderCountry: 'FR',
-          iconStyle: 'default',
+          iconStyle: 'default'
 
         })
         // eslint-disable-next-line
@@ -28,14 +31,11 @@ export default {
       })
     },
 
-    destroyStripeIbanElement() {
+    destroyStripeIbanElement () {
       const ibanElement = elements?.getElement('iban')
-      if (ibanElement) ibanElement.destroy()
-    },
-  },
-  beforeDestroy() {
-    this.destroyStripeIbanElement()
-  },
+      if (ibanElement) { ibanElement.destroy() }
+    }
+  }
 }
 
 </script>

@@ -1,5 +1,6 @@
-import { Account } from './models/Account'
-import { Product } from './models/Products'
+import { Account } from '~~/models/Account'
+import { Product } from '~~/models/Products'
+
 export const AppState = reactive({
   user: null,
   account: {} as Account,
@@ -10,16 +11,5 @@ export const AppState = reactive({
   cart: {
     products: [] as Product[],
     total: 10
-
   }
 })
-
-function getTotal(){
-
-  AppState.cart.total = AppState.cart.products.reduce((total, product) => {
-    return total + 10 ;
-}, 0);
-
-}
-
-getTotal()

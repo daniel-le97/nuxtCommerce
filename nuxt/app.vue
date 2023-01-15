@@ -1,9 +1,7 @@
 
-;
-
 <template>
   <div>
-    <Navbar />
+    <!-- <NavBar /> -->
     <NuxtPage class="mt-24" />
     <FooterBar class=" static" />
   </div>

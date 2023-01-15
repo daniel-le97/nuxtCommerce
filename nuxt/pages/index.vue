@@ -11,7 +11,6 @@
 
 import { productsService } from '../service/ProductsService'
 import { cartService } from '../service/CartService'
-import { AppState } from '../AppState'
 
 export default {
   setup () {

@@ -1,117 +1,99 @@
 <template>
   <div class="container mt-24 flex flex-col">
-    <h1 class="text-4xl"> Cart</h1>
- <TransitionGroup name="list" >
-     <div class="mt-5 rounded-md shadow-lg shadow-slate-400 p-5 text-dark " v-for="(c, index) in cart" :key="index"
+    <h1 class="text-4xl">
+      Cart
+    </h1>
+    <TransitionGroup name="list">
+      <div v-for="(c, index) in cart" :key="index" class="mt-5 rounded-md shadow-lg shadow-slate-400 p-5 text-dark ">
+        <div class="flex justify-between">
+          <img :src="c.coverImage" alt="" class="image shadow-xl shadow-slate-400 rounded-sm">
 
-     >
-    <div class="flex justify-between">
-      <img :src="c.coverImage" alt="" class="image shadow-xl shadow-slate-400 rounded-sm">
-
-      <div class="text-center  items-center flex text-xl">
-       <h1> {{ c.name }}</h1>
+          <div class="text-center  items-center flex text-xl">
+            <h1> {{ c.name }}</h1>
+          </div>
+          <div class="flex">
+            <p class="text-center mr-10  items-center flex font-bold">
+              ${{ c.price }}
+            </p>
+            <RemoveFromCart :cart-id="c.cartId" />
+          </div>
+        </div>
       </div>
-      <div class="flex">
-        <p class="text-center mr-10  items-center flex font-bold">
-          ${{ c.price }}
-        </p>
-  <RemoveFromCart :cartId="c.cartId" />
+    </TransitionGroup>
+    <div class="flex">
+      <div class="">
+        <h3 class="text-3xl">
+          $ {{ cartTotal }}
+        </h3>
       </div>
+      <button class="mt-5 text-3xl" @click="clearCart()">
+        Clear Cart
+      </button>
+      <button class="mt-5 text-3xl" @click="checkOut()">
+        Checkout
+      </button>
     </div>
-
-    </div>
-
- </TransitionGroup>
- <div class="flex">
-  <div class="">
-    <h3 class="text-3xl">
-     $ {{ cartTotal }}
-    </h3>
-  </div>
-     <button class="mt-5 text-3xl" @click="clearCart()">Clear Cart</button>
-    <button class="mt-5 text-3xl" @click="checkOut()">Checkout</button>
- </div>
   </div>
 </template>
 
 <script>
-import { computed } from "@vue/reactivity";
-
-import { AppState } from "~~/AppState.ts";
-import { cartService } from "~~/service/CartService.ts";
+import { cartService } from '../service/CartService'
 
 export default {
-  setup() {
-onMounted(()=>{
-  getCart()
-})
-async function getCart(){
-  try {
-await cartService.getCart()
-  } catch (error) {
-    logger.error(error)
-  }
-}
-    return {
-      dataItems: {},
-          session: {},
-          stripe: {},
-          stripePromise: {},
-    cart:computed(() => AppState.cart.products),
-cartTotal : computed(() => AppState.cart.products.length > 0 ? AppState.cart.products.reduce((total, product) => total + product.price, 0) : 0),
-    async clearCart(){
+  setup () {
+    onMounted(() => {
+      getCart()
+    })
+    async function getCart () {
       try {
-        console.log(AppState.cart);
-// cartService.clearCart()
+        await cartService.getCart()
       } catch (error) {
         logger.error(error)
       }
-    },
+    }
+    return {
+      dataItems: {},
+      session: {},
+      stripe: {},
+      stripePromise: {},
+      cart: computed(() => AppState.cart.products),
+      cartTotal: computed(() => AppState.cart.products.length > 0 ? AppState.cart.products.reduce((total, product) => total + product.price, 0) : 0),
+      async clearCart () {
+        try {
+          logger.log(AppState.cart)
+          await cartService.clearCart()
+        } catch (error) {
+          logger.error(error)
+        }
+      },
 
-
-
-
-
-async checkOut(){
-
- const response = await this.$http.$post(
-            `http://localhost:1337/api/orders`,
-            {
-              cartDetail: this.getCart,
-              cartTotal: this.getCartTotal.toFixed(2),
-            }
-          )
-
- const stripePromise = loadStripe(process.env.STRIPE_KEY)
-          const session = response
-          const stripe = await stripePromise
-          const result = await stripe.redirectToCheckout({
-            sessionId: session.id,
-          })
-          console.log(response)
-          if (result.error) {
-            this.$nuxt.context.error(result.error.message)
+      async checkOut () {
+        const response = await this.$http.$post(
+          'http://localhost:1337/api/orders',
+          {
+            cartDetail: this.getCart,
+            cartTotal: this.getCartTotal.toFixed(2)
           }
+        )
 
-
-
-
-
-
-
-
-}
-
-
-
+        const stripePromise = loadStripe(process.env.STRIPE_KEY)
+        const session = response
+        const stripe = await stripePromise
+        const result = await stripe.redirectToCheckout({
+          sessionId: session.id
+        })
+        logger.log(response)
+        if (result.error) {
+          this.$nuxt.context.error(result.error.message)
+        }
+      }
 
     }
-  },
+  }
 }
 </script>
 
-<style scoped lang="scss" >
-
+<style scoped lang="scss">
 
 .list-move, /* apply transition to moving elements */
 .list-enter-active,
@@ -126,17 +108,12 @@ async checkOut(){
   transform: translateX(30px);
 }
 
-
 /* ensure leaving items are taken out of layout flow so that moving
    animations can be calculated correctly. */
 .list-leave-active {
   position: absolute;
 
-
 }
-
-
-
 
 .slide-out-leave-active {
   animation: slide-out 0.5s;

@@ -39,8 +39,6 @@
 </template>
 
 <script>
-import { computed } from 'vue'
-import { AppState } from '../AppState'
 import { AuthService } from '../service/AuthService'
 
 export default {

@@ -1,4 +1,4 @@
-import { AppState } from '~~/AppState'
+
 import { Product } from '~~/models/Products'
 
 class ProductsService {
@@ -10,10 +10,9 @@ class ProductsService {
 
     }
     )
-    console.log(res.data);
+    logger.log(res.data)
 
-    // eslint-disable-next-line array-callback-return
-    AppState.products = res.data.map((d) => new Product(d))
+    AppState.products = res.data.map(d => new Product(d))
     // console.log(AppState.hats);
     // console.log(AppState.glasses);
   }

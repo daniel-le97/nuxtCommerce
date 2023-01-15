@@ -7,10 +7,10 @@ export const api = axios.create({
 
 })
 
-export const { find } = useStrapi()
-export const { create } = useStrapi()
-export const { update } = useStrapi4()
-export const { delete: remove } = useStrapi4()
-export const { findOne } = useStrapi()
+// export const { find } = useStrapi()
+// export const { create } = useStrapi()
+// export const { update } = useStrapi4()
+// export const { delete: remove } = useStrapi4()
+// export const { findOne } = useStrapi()
 
-// remove()
+// // remove()
