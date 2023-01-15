@@ -8,6 +8,10 @@
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "develop"],
+      "serverReadyAction":{
+        "action": "openExternally",
+        "killOnServerStop": false
+      },
       "env": {
         "NODE_ENV": "development",
         "STRAPI_ADMIN_JWT_SECRET": "yoursecretkey"

@@ -1,17 +1,18 @@
-
 {
-    "version": "0.2.0",
-    "configurations": [
-
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Nuxt.js",
-            "runtimeExecutable": "npm",
-            "runtimeArgs": [
-                "run-script", "dev"
-            ],
-            "outputCapture": "console"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Nuxt.js",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "dev"],
+      "outputCapture": "console",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "killOnServerStop": false
+      }
+    }
+  ]
 }
+
