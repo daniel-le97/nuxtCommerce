@@ -5,8 +5,10 @@ export const AppState = reactive({
   account: {} as Account,
   products: [] as Product[],
   activeProduct: {} as Product,
-hats:[] as Product[],
-glasses:[] as Product[],
-
-cart:[] 
+  hats: [] as Product[],
+  glasses: [] as Product[],
+  cart: {
+    products: [] as Product[],
+    total: 0
+  }
 })

@@ -9,38 +9,35 @@
 
 <script>
 
-import { AppState } from "~~/AppState.ts"
-import { cartService } from "~~/service/CartService.ts"
 import { productsService } from '../service/ProductsService'
+import { cartService } from '../service/CartService'
+import { AppState } from '../AppState'
+
 export default {
   setup () {
-
     onMounted(() => {
-
-  getGlasses()
-
+      getGlasses()
     })
-    onUnmounted(()=>{
-// clearCart()
+    onUnmounted(() => {
+      // clearCart()
     })
 
     async function getGlasses () {
       try {
-AppState.glasses = []
- await productsService.getProducts()
-
+        AppState.glasses = []
+        await productsService.getProducts()
       } catch (err) {
         logger.error(err)
       }
     }
-async function clearCart(){
-  try {
-cartService.clearCart()
-
-  } catch (error) {
-    logger.error(error)
-  }
-}
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    async function clearCart () {
+      try {
+        await cartService.clearCart()
+      } catch (error) {
+        logger.error(error)
+      }
+    }
     return {
       products: []
 
