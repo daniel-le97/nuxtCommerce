@@ -14,6 +14,7 @@ class CartService {
     })
     //  AppState.cart = res.data.map(c=> c.attributes?.Item)
     logger.log(AppState.cart)
+    pop.confirm('hi')
   }
 
   async removeFromCart (cartId:string) {
